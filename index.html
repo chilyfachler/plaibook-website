@@ -16,18 +16,21 @@ button{font-family:inherit}
 .mobile-menu a{color:#CBD5E1;font-size:15px;font-weight:500;text-decoration:none;padding:16px 32px;border-bottom:1px solid rgba(255,255,255,0.06)}
 .nav-toggle{display:none}
 .se-box{white-space:nowrap}
-@media(max-width:640px){
-.nav-link{display:none}
-.nav-toggle{display:inline-flex !important;align-items:center;justify-content:center}
-.header-inner{padding:14px 20px}
-.book-btn-header{padding:8px 14px;font-size:13px}
-.se-box{font-size:12px;padding:10px 12px}
-.se-connector{width:20px}
-}
-@media(max-width:380px){
-.se-box{font-size:10px;padding:8px 8px}
-.se-connector{width:12px}
-}
+  .se-connector{position:relative}
+  @media(max-width:640px){
+    .nav-link{display:none}
+    .nav-toggle{display:inline-flex !important;align-items:center;justify-content:center}
+    .header-inner{padding:14px 20px}
+    .book-btn-header{padding:8px 14px;font-size:13px}
+    .se-row{flex-direction:column}
+    .se-box{white-space:normal;font-size:15px !important;padding:14px 28px !important;border-width:1px !important;border-radius:0 !important;width:100%;max-width:220px;text-align:center}
+    .se-connector{width:2px !important;height:28px !important}
+    .se-connector::after{content:'';position:absolute;left:50%;top:100%;transform:translateX(-50%);width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid #0EA5E9}
+  }
+  @media(max-width:380px){
+    .se-box{font-size:13px !important;padding:12px 20px !important}
+    .se-connector{height:22px !important}
+  }
 </style>
 </head>
 <body>
@@ -56,7 +59,7 @@ button{font-family:inherit}
 <section style="background:#0D1B2A;padding:196px 32px 140px;position:relative;overflow:hidden">
 <div style="max-width:840px;margin:0 auto;position:relative;z-index:1">
 <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;font-weight:400;color:#64748B;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:28px">AI Transformation Consulting</div>
-<h1 style="font-family:Georgia,'Times New Roman',serif;font-size:64px;line-height:1.08;font-weight:700;color:#fff;margin:0 0 28px;letter-spacing:-0.01em">AI Transformation<br>Properly Done</h1>
+<h1 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,8vw,64px);line-height:1.15;font-weight:700;color:#fff;margin:0 0 28px;letter-spacing:-0.01em;overflow-wrap:break-word">AI Transformation Properly Done</h1>
 <p style="font-size:20px;line-height:1.6;color:#94A3B8;margin:0 0 44px;max-width:620px">We help ambitious businesses become genuinely AI-ready, not through generic advice, but through one integrated methodology that runs the full distance: from strategy through to execution, and everything in between that makes AI actually stick.</p>
 <div style="display:flex;gap:16px;flex-wrap:wrap">
 <button onclick="openModal(event)" style="display:inline-flex;align-items:center;background:#0EA5E9;color:#0D1B2A;font-size:15px;font-weight:700;border:none;cursor:pointer;padding:15px 28px;border-radius:3px">Book a call</button>
@@ -125,23 +128,23 @@ button{font-family:inherit}
 <p style="font-size:17px;line-height:1.75;color:#64748B;margin:0 0 20px">Chily was the buyer before he was the advisor. He signed the vendor contracts and bore the accountability when deployment stalled, so he knows exactly where transformations fail, and how to make sure yours doesn't.</p>
 <p style="font-size:17px;line-height:1.75;color:#64748B;margin:0">He's backed by a team of senior experts: data technologists, AI builders, CIOs and change management specialists, so every engagement has the right depth at every stage, not just at the top.</p>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E7E5E0;border:1px solid #E7E5E0">
-<div style="background:#F7F7F5;padding:32px 24px">
-<div style="font-family:Georgia,serif;font-size:36px;font-weight:700;color:#0D1B2A;margin-bottom:6px">97%</div>
-<p style="font-size:13.5px;line-height:1.5;color:#64748B;margin:0">AI adoption achieved at AppsFlyer</p>
-</div>
-<div style="background:#F7F7F5;padding:32px 24px">
-<div style="font-family:Georgia,serif;font-size:36px;font-weight:700;color:#0D1B2A;margin-bottom:6px">20</div>
-<p style="font-size:13.5px;line-height:1.5;color:#64748B;margin:0">years as CIO across SaaS, retail and e-commerce</p>
-</div>
-<div style="background:#F7F7F5;padding:32px 24px">
-<div style="font-family:Georgia,serif;font-size:36px;font-weight:700;color:#0D1B2A;margin-bottom:6px">6x</div>
-<p style="font-size:13.5px;line-height:1.5;color:#64748B;margin:0">ExCo participation across public and PE-backed companies</p>
-</div>
-<div style="background:#F7F7F5;padding:32px 24px">
-<div style="font-family:Georgia,serif;font-size:36px;font-weight:700;color:#0D1B2A;margin-bottom:6px">5x</div>
-<p style="font-size:13.5px;line-height:1.5;color:#64748B;margin:0">CIO100 recognition, known and trusted in the industry</p>
-</div>
+<div style="display:flex;flex-direction:column;gap:0">
+  <div style="display:flex;align-items:flex-start;gap:20px;padding:22px 0;border-bottom:1px solid #E7E5E0">
+    <div style="flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:#0D1B2A;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:15px;font-weight:700;color:#fff">97%</div>
+    <p style="font-size:14px;line-height:1.55;color:#64748B;margin:8px 0 0">AI adoption achieved at AppsFlyer</p>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:20px;padding:22px 0;border-bottom:1px solid #E7E5E0">
+    <div style="flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:#0EA5E9;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:15px;font-weight:700;color:#0D1B2A">20</div>
+    <p style="font-size:14px;line-height:1.55;color:#64748B;margin:8px 0 0">years as CIO across SaaS, retail and e-commerce</p>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:20px;padding:22px 0;border-bottom:1px solid #E7E5E0">
+    <div style="flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:#0D1B2A;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:15px;font-weight:700;color:#fff">6x</div>
+    <p style="font-size:14px;line-height:1.55;color:#64748B;margin:8px 0 0">ExCo participation across public and PE-backed companies</p>
+  </div>
+  <div style="display:flex;align-items:flex-start;gap:20px;padding:22px 0">
+    <div style="flex:0 0 auto;width:56px;height:56px;border-radius:50%;background:#0EA5E9;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:15px;font-weight:700;color:#0D1B2A">5x</div>
+    <p style="font-size:14px;line-height:1.55;color:#64748B;margin:8px 0 0">CIO100 recognition, known and trusted in the industry</p>
+  </div>
 </div>
 </div>
 </section>
